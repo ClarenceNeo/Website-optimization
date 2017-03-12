@@ -92,4 +92,4 @@ gulp.task('image', function () {
     }))
     .pipe(gulp.dest('dist/img'))
 })
-gulp.task('default', ['watchjs','watchcss'])
+gulp.task('default', ['watchjs', 'watchcss', 'watchimage'])
