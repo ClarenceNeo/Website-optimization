@@ -2,6 +2,8 @@
 
 网站访问地址为 [http://zyuann.com/Website-optimization/dist/index.html](http://zyuann.com/Website-optimization/dist/index.html)
 
+60fps 页面地址为 [http://zyuann.com/Website-optimization/dist/views/pizza.html](http://zyuann.com/Website-optimization/dist/views/pizza.html)
+
 ---
 
 **warning: 需要提前安装 Node, 此项目 npm 版本 2.9.1 .**
