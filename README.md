@@ -94,7 +94,7 @@ gulp 的配置文件为：`gulpfile.js`
 
 按以上原则优化，最后的优化效果如下所示：
 
-![](http://oeryvxt85.bkt.clouddn.com/2017-03-13-Screen%20Shot%202017-03-13%20at%204.34.18%20PM.png)
+![](http://oeryvxt85.bkt.clouddn.com/2017-03-13-Screen%20Shot%202017-03-13%20at%204.38.39%20PM.png)
 
 这样就完成了整个项目网站的优化。
 
