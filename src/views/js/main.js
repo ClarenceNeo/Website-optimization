@@ -436,7 +436,8 @@ var resizePizzas = function(size) {
 
     var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
 
-    for (var i = 0; i < randomPizzas.length; i++) {
+    var pizzasLength = randomPizzas.length;
+    for (var i = 0; i < pizzasLength; i++) {
       randomPizzas[i].style.width = newWidth + "%";
     }
   }
@@ -453,8 +454,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // 收集timing数据
 
 // 这个for循环在页面加载时创建并插入了所有的披萨
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -486,9 +487,9 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var items = document.querySelectorAll('.mover');
-  var cachedScrollTop = document.body.scrollTop;
+  var cachedScrollTop = document.body.scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((cachedScrollTop / 1250) + (i % 5));
+    var phase = Math.sin(cachedScrollTop + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -507,9 +508,10 @@ window.addEventListener('scroll', updatePositions);
 
 // 当页面加载时生成披萨滑窗
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  var cols = Math.floor(screen.width / 256) + 1;
+  var length = Math.ceil(screen.height / 256) * cols;
+  for (var i = 0; i < length; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
